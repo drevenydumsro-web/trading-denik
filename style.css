@@ -1,0 +1,140 @@
+/* Základní reset a písmo */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6; /* Světle šedé pozadí */
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrování obsahu */
+}
+
+/* Kontejner pro celou aplikaci (formulář a analýzu) */
+body > * {
+    max-width: 900px; /* Omezení šířky pro čitelnost */
+    width: 100%;
+}
+
+/* Hlavička */
+header {
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #007bff; /* Modrý oddělovač */
+}
+
+header h1 {
+    color: #007bff;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-style: italic;
+    color: #666;
+}
+
+/* Sekce Analýzy */
+.analysis-overview {
+    background-color: #e9f7ff; /* Světle modré pozadí */
+    border: 1px solid #b3e0ff;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.analysis-overview h2 {
+    color: #007bff;
+    border-bottom: 2px solid #b3e0ff;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.chart-placeholder {
+    height: 150px;
+    background-color: #cceeff; /* Tmavší modrý zástupný prostor */
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0056b3;
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: 0.9em;
+    border: 1px dashed #007bff;
+}
+
+/* Styl pro formulář */
+#tradingForm {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Fieldset pro seskupení sekcí */
+fieldset {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 6px;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #495057;
+    padding: 0 10px;
+}
+
+/* Skupina formulářových prvků (Label + Input) */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #444;
+}
+
+/* Styl pro všechny vstupy, selecty a textarea */
+input[type="text"],
+input[type="number"],
+input[type="datetime-local"],
+input[type="url"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box; /* Zajišťuje, že padding neovlivní celkovou šířku */
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+/* Tlačítko pro odeslání */
+#submitButton {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #28a745; /* Zelená barva pro akci */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deník Tradingu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section class="analysis-overview">
+        <h2>Přehled Obchodní Analýzy</h2>
+        <p>
+            Zde se v budoucnu může zobrazit graf výkonnosti.
+            <a href="ODKAZ_NA_TVOU_ANALYTICKOU_TABULKU" target="_blank">Přejít na detailní analytickou tabulku (Google Sheets/TradingView)</a>
+        </p>
+        
+        <div id="performanceChart" class="chart-placeholder">
+            [Místo pro embedovaný graf (např. míra výhry, R:R)]
+        </div>
+    </section>
+    <header>
+        <h1>Deník Tradingu – Záznam Obchodu</h1>
+        <p>Vyplňte údaje před vstupem do obchodu a po jeho ukončení.</p>
+    </header>
+
+    <form id="tradingForm">
+
+        <fieldset>
+            <legend>I. Základní Identifikace Obchodu</legend>
+
+            <div class="form-group">
+                <label for="datumCas">Datum a Čas:</label>
+                <input type="datetime-local" id="datumCas" name="Datum_a_Cas" required>
+            </div>
+
+            <div class="form-group">
+                <label for="instrument">Instrument (Akcie, Komodita...):</label>
+                <input type="text" id="instrument" name="Instrument" placeholder="Např. AAPL, EURUSD, Zlato" required>
+            </div>
+
+            <div class="form-group">
+                <label for="smer">Směr obchodu:</label>
+                <select id="smer" name="Smer" required>
+                    <option value="" disabled selected>Vyber směr</option>
+                    <option value="LONG">LONG (Nákup/Očekávaný růst)</option>
+                    <option value="SHORT">SHORT (Prodej/Očekávaný pokles)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="vstupCena">Vstupní Cena:</label>
+                <input type="number" step="any" id="vstupCena" name="Vstupni_Cena" required>
+            </div>
+
+            <div class="form-group">
+                <label for="exitCena">Exit Cena:</label>
+                <input type="number" step="any" id="exitCena" name="Exit_Cena" required>
+            </div>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>II. Řízení Rizika</legend>
+
+            <div class="form-group">
+                <label for="stopLoss">Stop Loss (SL) Cena:</label>
+                <input type="number" step="any" id="stopLoss" name="Stop_Loss" required>
+            </div>
+
+            <div class="form-group">
+                <label for="takeProfit">Take Profit (TP) Cena:</label>
+                <input type="number" step="any" id="takeProfit" name="Take_Profit">
+            </div>
+
+            <div class="form-group">
+                <label for="pomerRR">Poměr R:R (Risk/Reward):</label>
+                <input type="text" id="pomerRR" name="Pomer_RR" placeholder="Např. 1:2" required>
+            </div>
+
+        </fieldset>
+        
+        <fieldset>
+            <legend>IV. Reflexe a Závěr</legend>
+            
+            <div class="form-group">
+                <label for="screenLink">Odkaz na Screen Obchodu (URL):</label>
+                <input type="url" id="screenLink" name="Odkaz_na_Screen" placeholder="https://drive.google.com/ odkaz na obrázek grafu..." >
+            </div>
+
+            <div class="form-group">
+                <label for="vysledek">Výsledek obchodu:</label>
+                <select id="vysledek" name="Vysledek_Obchodu" required>
+                    <option value="" disabled selected>Zisk, Ztráta, Break-Even?</option>
+                    <option value="ZISK">ZISK</option>
+                    <option value="ZTRATA">ZTRÁTA</option>
+                    <option value="BREAK-EVEN">BREAK-EVEN</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="chybaKritika">CHYBA #1 (Kritika):</label>
+                <textarea id="chybaKritika" name="Chyba_Kritika" rows="3" placeholder="Co se POKAZILO? Např. Vystoupil jsem moc brzy."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="ponauceni">PONAUČENÍ:</label>
+                <textarea id="ponauceni" name="Ponauceni" rows="3" placeholder="Konkrétní krok pro zlepšení."></textarea>
+            </div>
+
+        </fieldset>
+
+        <button type="submit" id="submitButton">Uložit Záznam do Deníku</button>
+
+        <p id="feedbackMessage" style="margin-top: 15px;"></p>
+
+    </form>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
